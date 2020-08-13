@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Music and Emotions 3</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="body">
+
+  <div id="app" class="container-fluid">
+    <div class="title">
+      <h1>Music and Emotion</h1>
+      <h4 id="sub-header">Music has the power to evoke powerful emotional responses</h4>
+      <img :src="img" class="center">
+      <br> 
+      <a class="mainPage" href="https://cdpn.io/fw2347/debug/LYNpwrV">Main Page</a>
+    </div>
+    <br>
+    <div id="section1" class="piece">
+      <h3 id="step1">Step 1: Create your character</h3>
+      <br>
+      <form>
+        Name: <input type="text" v-model="character.name">
+        Age: <input type="text" v-model.number="character.age">
+        <label>
+          Gender: <input type="radio" value="male" name="gender" v-model.="character.gender">Male
+          <input type="radio" value="female" name="gender" v-model="character.gender">Female
+        </label>
+        <br><br>
+        Emotion levels (0 to 10 = lowerest to highest)
+        <br>
+        Happiness: <input type="range" min="-10" max="10" step="1" v-model.number="character.happiness"> {{character.happiness}}
+        <br>
+        Calmness:<input type="range" min="-10" max="10" step="1" v-model.number="character.calmness"> {{character.calmness}}
+        <br>
+
+        Loneliness:<input type="range" min="-10" max="10" step="1" v-model.number="character.loneliness"> {{character.loneliness}}
+        <br>
+        Anxiety: <input type="range" min="-10" max="10" step="1" v-model.number="character.anxiety"> {{character.anxiety}}
+
+        <br>
+        <div class="text-center">
+          <button class="mainPage" type="button" @click="update">Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="background2 piece" >
+      <div class="row">
+        <div class="col">
+          <h4 id="step2">Step 2: Check Character Mood</h4>
+        </div>
+      </div>
+      <div class="row" id="sectionTwo">
+        <div class="col-6 text-center" id="section2" >
+          Name:{{info.name}} 
+          <br>
+          Age:{{info.age}} 
+          <br>
+            Gender:{{info.gender}}
+          <br>Happiness:{{info.happiness}}
+          <br>Calmness:{{info.calmness}}
+          <br>Loneliness:{{info.loneliness}}
+          <br>Anxiety:{{info.anxiety}}
+          <br>
+          <br>
+          <br>
+          <div class="text-center" >
+          <button @click="emoji" class="mainPage">Check character mood</button>
+            </div>
+        </div>
+        <div class="col-6" id="face">{{emojis}}</div>
+      </div>
+    </div>
+      <hr>
+      <music v-for="song in songs" :item="song" @type-check="emotion" @delete="clear" @play-songs="play" @pause-songs="stop"></music>
+    </div>
+ 
+  </div>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+<!-- Add SDKs for Firebase Firestore-->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJHhNR8H7cUxRoW2udifdtRddUqWn2Rw4",
+    authDomain: "mstu5013-classwork.firebaseapp.com",
+    databaseURL: "https://mstu5013-classwork.firebaseio.com",
+    projectId: "mstu5013-classwork",
+    storageBucket: "mstu5013-classwork.appspot.com",
+    messagingSenderId: "101731794475",
+    appId: "1:101731794475:web:b2df979e7d2b255ef5346e",
+    measurementId: "G-EYWKRQ4W56"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

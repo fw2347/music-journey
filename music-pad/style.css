@@ -1,0 +1,164 @@
+.body {
+  background-color:#FE8F59;
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #FE8F59);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.dot {
+  height: 120px;
+  width: 120px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+  border: none;
+}
+
+.dotwhite {
+  background-color: white;
+  border: 2px solid #FE8F59;
+}
+
+.on {
+  background-color: orange;
+}
+
+html, body {
+  font-family: Helvetica, sans-serif;
+  margin-left: 0.5em;
+}
+
+html, h3, h2, p, span {
+  color: white;
+}
+
+.comment {
+  display: inline-block;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 1em;
+  height: auto;
+  vertical-align: top;
+  margin: 1em;
+  border-radius: 0.25em;
+}
+h1 {
+  margin: 0.5em;
+}
+input, textarea, .btn-primary {
+  margin-left: 0.5em;
+  vertical-align: text-bottom;
+  
+}
+
+.btn-comment {
+  color: white;
+  background-color: orange;
+}
+
+.btn-info {
+  background: #008B8B;
+}
+
+.btn-danger {
+  background: #A52A2A;
+}
+
+.username {
+  border-color: orange;
+  color: orange;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 10px;
+}
+
+.comment {
+  color: orange;
+
+}
+
+.comment__answers {
+  border-radius: 18px;
+  background: white;
+  padding: 20px; 
+  width: 200px;
+  height: 100px;  
+  color: orange;
+}
+
+.post {
+  color: grey;
+  background: #D1DAA2;
+  margin-left: 0.5em;
+  border: 1px solid grey;
+}
+
+.post :hover {
+  color: grey;
+  background: white;
+  margin-left: 0.5em;
+  border: 1px solid grey;
+  
+}
+
+.usernameNew {
+  text-align: left;
+}
+
+.commentNew {
+  border-radius: 18px;
+  background: white;
+  padding: 20px; 
+  width: 200px;
+  color: orange;
+}
+
+.reply {
+  border-radius: 18px;
+  background: white;
+  padding: 10px; 
+  width: 200px;
+  text-align: center;
+  color: grey;
+}
+
+html, hr {
+  border: 1px solid grey;
+}
+
+.mainPage {
+  border-radius: 18px;
+  background: orange;
+  padding: 5px; 
+  width: 100px;
+  text-align: center;
+  color: white;
+}
+
+.mainPage:hover {
+  border-radius: 18px;
+  background: white;
+  padding: 5px; 
+  width: 100px;
+  text-align: center;
+  color: orange;
+}
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Playing audio files with Vue.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <body class="background">
+  <div class="title" id="title">
+    <h1 class="container">Classical Piano Quiz</h1>
+    <p> Test how much you know about the classical piano. Press the 🎵 buttons, listen to the musics and answer the questions.
+      <br/>20 points for a correct answer but 10 points will be deducted for a wrong answer.</p>
+  </div>
+
+  <div class="container">
+    <a class="mainPage"  href="https://cdpn.io/fw2347/debug/LYNpwrV">Main Page</a>
+    <div>
+      <button class="btn-get-started" @click.prevent="playMusic1('https://feiwangart.files.wordpress.com/2020/07/aefbc8flefbc8fl-e5b08fe6989fe6989fe5a489e5a58fe69bb2-k.265efbc88e7bfbbe887aa-e9838ee69c97efbc89.mp3')" style=font-size:18px>🎵 First Piece</button>
+
+      <h5 class="page-header"><br>Who is the composer of this piece?</h5>
+
+      <label>
+        <input type="radio" value="Mozart" v-model="firstQuiz">Mozart
+      </label>
+      <label>
+        <input type="radio" name="firstQuiz" value="Beethoven" v-model="firstQuiz">Beethoven
+      </label>
+      <label>
+        <input type="radio" name="firstQuiz" value="Chopin" v-model="firstQuiz">Chopin
+      </label>
+    </div>
+
+    <br>
+    <div>
+      <button class="btn-get-started" @click.prevent="playMusic2('https://feiwangart.files.wordpress.com/2020/07/ludwig-van-beethoven-moonlight-sonata.mp3')" style=font-size:18px>🎵 Second Piece</button>
+
+      <h5 class="page-header"><br>What specific music style does this piece best represent?</h5>
+
+      <label>
+        <input type="radio" name="secondQuiz" value="Classical style" v-model="secondQuiz">Classical style
+      </label>
+      <label>
+        <input type="radio" name="secondQuiz" value="Transition from Classical to Romantic style" v-model="secondQuiz">Transition from Classical to Romantic style
+      </label>
+      <label>
+        <input type="radio" name="secondQuiz" value="Romantic style" v-model="secondQuiz">Romantic style
+      </label>
+    </div>
+    <br>
+    <div>
+      <button class="btn-get-started" @click.prevent="playMusic3('https://feiwangart.files.wordpress.com/2020/07/e7bea4e6989f-e88296e982a6e59c86e8889ee69bb2.mp3')" style=font-size:18px>🎵 Third Piece</button>
+
+      <h5 class="page-header"><br>Which historical period did the composer of this piece live in?</h5>
+
+      <label>
+        <input type="radio" name="thirdQuiz" value="18th century" v-model="thirdQuiz">18th century
+      </label>
+      <label>
+        <input type="radio" name="thirdQuiz" value="18-19th century" v-model="thirdQuiz">18-19th century
+      </label>
+      <label>
+        <input type="radio" name="thirdQuiz" value="19th century" v-model="thirdQuiz">19th century
+      </label>
+    </div>
+    <div class="footer" id="footer">
+      <h2 />
+      <p>Final score: {{score}}</p>
+
+      <button class="buttonCalculate" @click="calculation">Calculate Score</button>
+
+      <button class="buttonClear" @click="clear">Clear</button>
+    </div>
+  </div>
+  </body>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

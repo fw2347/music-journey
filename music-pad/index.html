@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Music Pad</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="background">
+
+<h1 class="text-light">Music Experiment</h1> 
+
+<div class="btn-group mt-2 mb-4" role="group" aria-label="actionButtons">
+	
+</div>
+  
+<div class="text-center" id="app">
+  <br> 
+  <h3>Click on each button to experiment with the music!</h3>
+  <br>
+<!--   <div v-if="musicPlayed">
+    <p> Hum the piece! </p>
+  </div> -->
+  <div>
+ <music v-for="music in musics" :music="music"></music>
+  </div>
+<!--  <product :product0="product2"></product>
+ <product :product0="product3"></product>
+ <product :product0="product4"></product> -->
+<!--   <button class="dot btn2"></button>
+  <button class="dot dotwhite btn3"></button>
+  <button class="dot btn4"></button>
+  <button class="dot dotwhite btn5"></button>
+  <button class="dot btn6"></button>
+  <button class="dot dotwhite btn7"></button>
+  <button class="dot btn8"></button> -->
+  <div>
+  <hr>
+    
+  <h2>Guiding Questions</h2>
+    <p>1. Can you take a guess of what notes are behind the first seven buttons? </p>
+    <p>2. Clicking the last three buttons one by one, what do you notice? </p>
+    
+  <br>
+  <h3>Discussion</h3>
+    <p>After experimenting with the music, what thoughts do you have? </p>
+    <p>Provide your answers to the questions above and add any ideas you have.</p>
+
+  <span>Username:</span>
+    <br>
+    <input class="username" type="text" v-model="user">
+    <br><br>
+  <span>Comment:</span>
+    <br>
+  <textarea type="text" class="comment__answers username" placeholder="Leave your comment" v-model="newComment"></textarea>
+    <br><br>
+    <button class="btn btn-primary post" @click="addComment">✌️Post</button>
+  <hr>
+  <comment v-for="comment in comments" :comment="comment" @like-comment="likeComment" @delete-comment="deleteComment" @comment-reply="commentReply">
+    </div>
+</div>
+  
+<a class="mainPage" href="https://cdpn.io/fw2347/debug/LYNpwrV">Main Page</a>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+<!-- Add SDKs for Firebase Firestore-->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+
+<script>
+  // Replace with your web app's Firebase configuration here
+const firebaseConfig = {
+  apiKey: "AIzaSyBm-QwT2HbqcA5WWf5jJAXEjs1Ivkwkv_c",
+  authDomain: "musicpad-9e5b6.firebaseapp.com",
+  databaseURL: "https://musicpad-9e5b6.firebaseio.com",
+  projectId: "musicpad-9e5b6",
+  storageBucket: "musicpad-9e5b6.appspot.com",
+  messagingSenderId: "1018487414602",
+  appId: "1:1018487414602:web:2ae446dcd00f1f42516bb3"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
